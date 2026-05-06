@@ -10,6 +10,9 @@ function init() {
     const volumeIcon = document.querySelector("#volume-controls img");
     const audio = document.querySelector("audio");
 
+    const button = document.querySelector("button")
+    const jsConfetti = new JSConfetti()
+
 
     hornSelect.addEventListener("change", () => {
         if (hornSelect.value === "air-horn") {
@@ -48,5 +51,9 @@ function init() {
         }
     });
 
-    
+    button.addEventListener("click", () => {
+        audio.play();
+        if (hornSelect.value === "party-horn")
+            jsConfetti.addConfetti()
+    });
 }
